@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
         .container{
             max-width: 80%;
             margin: 0 auto;
@@ -20,6 +21,7 @@
 
         body{
             margin: 0px !important;
+            font-family: 'Agbalumo', sans-serif;
         }
         .flex_menu{
             display: flex;
@@ -32,13 +34,16 @@
         }
         .menu ul li{
             margin:20px;
-            padding: 10px;  
+            padding: 10px; 
+            transition-duration: 0.5s; 
         }
 
         .menu ul li:hover{
             background-color: aqua;
         }
-       
+        form{
+            margin:50px;
+        }
     </style>
 </head>
 <body>
@@ -46,7 +51,7 @@
     <div class="header header__fondo">
         <div class="container flex_menu">
             <div class="logo">
-                <img src="img/logo.gif" />
+                <img src="img/logo.gif" id="logo-header" />
             </div>
             <div class="menu">
                 <ul>
@@ -66,11 +71,22 @@
    <div class="container" style="text-align: center;">
         <p id="texto1" onclick="alerta()">Jóvenes creativos</p>
         <p id="texto2" >Cambio de texto</p>
+        <p id="teclado">Cambio de texto</p>
+        <form>
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingresa aquí tu nombre" id="nombre"/>
+            
 
+        </form>
+             <button onclick="guardar()">Almacenar</button>
+            <button onclick="imprimir()">Mostrar</button>
+        <button onclick="tiktok()">
+            Cambiar a tik tok
+        </button>
+        <button onclick="instagram()">
+            Cambiar a Instagram
+        </button>
    </div>
-
-  
-
     <script>
         document.getElementById("texto2").onclick=function(){
             document.getElementById("texto2").style.fontSize="2em"
@@ -79,6 +95,33 @@
         function alerta(){
             alert("Funcionó");
         }
+
+        function guardar(){
+         let palabra= document.getElementById("nombre").value;
+         localStorage.setItem("nombreGuardado",palabra);
+         console.log("funcionó");
+        }
+
+        function imprimir(){
+            let recuperado= localStorage.getItem("nombreGuardado");
+            alert(recuperado);
+        }
+
+        function tiktok(){
+
+            let img= document.getElementById("logo-header");
+            img.setAttribute("src","img/logo.gif");
+        }
+
+        function instagram(){
+            let img= document.getElementById("logo-header");
+            img.setAttribute("src","img/instagram.gif");
+        }
+        document.getElementById("nombre").addEventListener("keydown",function(){
+            document.getElementById("teclado").innerHTML="texto nuevo";
+        });
+          
+        
     </script>
 </body>
 </html>
