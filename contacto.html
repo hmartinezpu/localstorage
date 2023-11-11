@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header header__fondo">
+        <div class="container flex_menu">
+            <div class="logo">
+                <img src="img/logo.gif" id="logo-header" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                    <li>
+                       Acerca de 
+                    </li>
+                    <li>
+                       <a href="contacto.html">Contacto</a> 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="text-align: center;margin-top: 20px;">
+        <form style="max-width: 60%;margin:0 auto;padding:30px;border-radius:20px;background-color: darkgray;">
+            <input id="nombre_form" type="text" name="nombre" placeholder="Nombre"/><br>
+            <input id="apellido_form" type="text" name="apellido" placeholder="Apellido"/><br>
+            <input id="email" type="email" name="email" placeholder="E-Mail"/><br>
+            <input id="telefono" type="tel" name="telefono" placeholder="Teléfono"/><br>
+       </form>
+       <button id="send">
+            Enviar
+       </button>
+       <button id="verificar">
+           Verificar
+       </button>
+    </div>
+   <script>
+       let boton=document.getElementById("send"); 
+       
+       boton.addEventListener("click", function(){
+            let n=document.getElementById("nombre_form").value;
+            let a=document.getElementById("apellido_form").value;
+            let e=document.getElementById("email").value;
+            let t=document.getElementById("telefono").value;
+            localStorage.setItem("nombre",n);
+            localStorage.setItem("apellido",a);
+            localStorage.setItem("email",e);
+            localStorage.setItem("teléfono",t);
+            console.log("Nombre: "+n+" Apellido: "+a+ " Email: "+e+ " Teléfono: "+t)
+       });
+
+       let boton1=document.getElementById("verificar"); 
+       
+       boton1.addEventListener("click", function(){
+            let l1=localStorage.getItem("nombre");
+            let l2=localStorage.getItem("apellido");
+            let l3=localStorage.getItem("email");
+            let l4=localStorage.getItem("teléfono");
+            alert("Nombre: "+l1+" Apellido: "+l2+ " Email: "+l3+ " Teléfono: "+l4);
+       });
+
+   </script>
+</body>
+</html>

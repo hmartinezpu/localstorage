@@ -1,0 +1,52 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+        .container{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .header__fondo{
+            background-color: dodgerblue;
+        }
+
+        .logo img{
+          width: 100px;  
+        }
+
+        body{
+            margin: 0px !important;
+            font-family: 'Agbalumo', sans-serif;
+        }
+        input{
+            margin-top: 20px;
+            border-radius: 20px;
+            padding: 5px;
+            font-weight: 400;
+
+        }
+        .flex_menu{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu ul{
+            display: flex;
+            list-style: none !important;
+        }
+        .menu ul li{
+            margin:20px;
+            padding: 10px; 
+            transition-duration: 0.5s; 
+        }
+
+        .menu ul li:hover{
+            background-color: aqua;
+        }
+        form{
+            margin:50px;
+        }
+
+        .pruebas{
+            background-color:beige;
+        }
+  
