@@ -4,10 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .header__fondo{
+            background-color: dodgerblue;
+        }
+
+        .logo img{
+          width: 100px;  
+        }
+
+        body{
+            margin: 0px !important;
+        }
+        .flex_menu{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .menu ul{
+            display: flex;
+            list-style: none !important;
+        }
+        .menu ul li{
+            margin:20px;
+            padding: 10px;  
+        }
+
+        .menu ul li:hover{
+            background-color: aqua;
+        }
+       
+    </style>
 </head>
 <body>
-    <p id="texto1" onclick="alerta()">Jóvenes creativos</p>
+    
+    <div class="header header__fondo">
+        <div class="container flex_menu">
+            <div class="logo">
+                <img src="img/logo.gif" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>
+                        Home
+                    </li>
+                    <li>
+                       Acerca de 
+                    </li>
+                    <li>
+                       Contacto 
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+   <div class="container" style="text-align: center;">
+        <p id="texto1" onclick="alerta()">Jóvenes creativos</p>
+        <p id="texto2" >Cambio de texto</p>
+
+   </div>
+
+  
+
     <script>
+        document.getElementById("texto2").onclick=function(){
+            document.getElementById("texto2").style.fontSize="2em"
+        }
+
         function alerta(){
             alert("Funcionó");
         }
